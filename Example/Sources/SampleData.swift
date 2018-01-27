@@ -60,10 +60,10 @@ final class SampleData {
     let jobs = Sender(id: "000001", displayName: "Steve Jobs")
     let cook = Sender(id: "656361", displayName: "Tim Cook")
 
-    lazy var senders = [dan, steven, jobs, cook]
+    lazy var senders = [jobs, cook, dan]
 
     var currentSender: Sender {
-        return steven
+        return dan
     }
 
     let messageImages: [UIImage] = [#imageLiteral(resourceName: "Dan-Leonard"), #imageLiteral(resourceName: "Tim-Cook"), #imageLiteral(resourceName: "Steve-Jobs")]
@@ -146,14 +146,14 @@ final class SampleData {
         let randomNumberSender = Int(arc4random_uniform(UInt32(senders.count)))
         let randomNumberText = Int(arc4random_uniform(UInt32(messageTextValues.count)))
         let randomNumberImage = Int(arc4random_uniform(UInt32(messageImages.count)))
-        let randomMessageType = Int(arc4random_uniform(UInt32(messageTypes.count)))
+//        let randomMessageType = Int(arc4random_uniform(UInt32(messageTypes.count)))
         let randomNumberLocation = Int(arc4random_uniform(UInt32(locations.count)))
         let randomNumberEmoji = Int(arc4random_uniform(UInt32(emojis.count)))
         let uniqueID = NSUUID().uuidString
         let sender = senders[randomNumberSender]
         let date = dateAddingRandomTime()
 
-        switch messageTypes[randomMessageType] {
+        switch messageTypes[0] {
         case "Text":
             return MockMessage(text: messageTextValues[randomNumberText], sender: sender, messageId: uniqueID, date: date)
         case "AttributedText":
