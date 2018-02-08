@@ -50,7 +50,7 @@ open class MediaMessageCell: MessageCollectionViewCell {
         messageContainerView.addSubview(imageView)
         messageContainerView.addSubview(playButtonView)
         setupConstraints()
-    } 
+    }
     
     open override func configure(with message: MessageType, at indexPath: IndexPath, and messagesCollectionView: MessagesCollectionView) {
         super.configure(with: message, at: indexPath, and: messagesCollectionView)

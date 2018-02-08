@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoMessageCellCollectionViewCell: MessageCollectionViewCell {
+open class VideoMessageCellCollectionViewCell: MessageCollectionViewCell {
     open override class func reuseIdentifier() -> String { return "messagekit.cell.mediavideomessage" }
     
     // MARK: - Properties
